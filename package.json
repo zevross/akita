@@ -84,5 +84,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  }
+  },
+  "main": "dist/src/index.js"
 }
