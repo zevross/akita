@@ -1,5 +1,6 @@
 This is a fork of the repository to solve a problem we were having.
 
+```
 1954:    // when we use the local/session storage we perform the serialize, otherwise we let the passed storage implementation to do it
     const isLocalStorage = (hasLocalStorage() && storage === localStorage) || (hasSessionStorage() && storage === sessionStorage);
     observify(storage.getItem(key)).subscribe((value) => {
