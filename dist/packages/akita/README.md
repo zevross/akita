@@ -1,28 +1,10 @@
-This is a fork of the @datorama/akita repository to solve a problem we were having where the local storage would reset on refresh.
-
-```
-1954:    // when we use the local/session storage we perform the serialize, otherwise we let the passed storage implementation to do it
-    const isLocalStorage = (hasLocalStorage() && storage === localStorage) || (hasSessionStorage() && storage === sessionStorage);
-    observify(storage.getItem(key)).subscribe((value) => {
-        let storageState = isObject(value) ? value : deserialize(value || '{}');
-        function save(storeCache) {
-            storageState['$cache'] = Object.assign({}, (storageState['$cache'] || {}), storeCache);
-            storageState = Object.assign({}, storageState, acc);
-            //@em843 TODO!!! I changed this so both strategies run serialize
-            buffer.push(storage.setItem(key, isLocalStorage ? serialize(storageState) : serialize(storageState)));
-            _save(buffer.shift());
-        }
-```
-
----
-
-# THE LIBRARY IS NOT MAINTAINED ANYMORE - DON'T USE IT
-
-## Elf, a newer state management solution, has been published. We recommend [checking it out](https://ngneat.github.io/elf/) 🚀
-
 ![Akita](https://s8.postimg.cc/d4m3fc9tx/image.png)
 
 > A Reactive State Management Tailored-Made for JS Applications
+
+## Elf, a newer state management solution, has been published. We recommend [checking it out](https://ngneat.github.io/elf/) 🚀
+
+
 
 Whether it be Angular, React, Vue, Web Components or plain old vanilla JS, Akita can do the heavy lifting and serve as a useful tool for maintaining clean, boilerplate-free, and scalable applications.
 

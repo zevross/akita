@@ -161,8 +161,8 @@ export function persistState(params?: Partial<PersistStateParams>): PersistState
     function save(storeCache) {
       storageState['$cache'] = { ...(storageState['$cache'] || {}), ...storeCache };
       storageState = Object.assign({}, storageState, acc);
-
-      buffer.push(storage.setItem(key, isLocalStorage ? serialize(storageState) : storageState));
+      //@em843 TODO!!! I changed this so both strategies run serialize
+      buffer.push(storage.setItem(key, isLocalStorage ? serialize(storageState) : serialize(storageState)));
       _save(buffer.shift());
     }
 
