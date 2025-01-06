@@ -1,3 +1,21 @@
+This is a fork of the repository to solve a problem we were having.
+
+1954:    // when we use the local/session storage we perform the serialize, otherwise we let the passed storage implementation to do it
+    const isLocalStorage = (hasLocalStorage() && storage === localStorage) || (hasSessionStorage() && storage === sessionStorage);
+    observify(storage.getItem(key)).subscribe((value) => {
+        let storageState = isObject(value) ? value : deserialize(value || '{}');
+        function save(storeCache) {
+            storageState['$cache'] = Object.assign({}, (storageState['$cache'] || {}), storeCache);
+            storageState = Object.assign({}, storageState, acc);
+            //@chriszrc TODO!!! I changed this so both strategies run serialize
+            buffer.push(storage.setItem(key, isLocalStorage ? serialize(storageState) : serialize(storageState)));
+            _save(buffer.shift());
+        }
+``` 
+
+
+
+----
 # THE LIBRARY IS NOT MAINTAINED ANYMORE - DON'T USE IT
 
 ## Elf, a newer state management solution, has been published. We recommend [checking it out](https://ngneat.github.io/elf/) 🚀
