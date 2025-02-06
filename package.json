@@ -23,6 +23,7 @@
     "rxjs": "*",
     "tslib": "2.4.1"
   },
+  "NOTE-dependencies": "If you're trying to build this lib locally, then move angular to zone.js back to dependencies, and un-x the postinstall script, and maybe remove peerDependencies",
   "dependencies": {},
   "devDependencies": {
     "@angular/animations": "15.0.4",
