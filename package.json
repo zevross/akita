@@ -23,6 +23,7 @@
     "rxjs": "*",
     "tslib": "2.4.1"
   },
+  "dependencies": {},
   "devDependencies": {
     "@angular/animations": "15.0.4",
     "@angular/common": "15.0.4",
